@@ -1,0 +1,108 @@
+/* styles.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  color: #1877f2;
+}
+
+#chat-window {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative; /* Added */
+}
+
+#chat-messages {
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 20px;
+}
+
+#user-input {
+  width: calc(100% - 80px);
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: #f0f2f5;
+}
+
+#send-btn {
+  position: absolute; /* Added */
+  right: 20px; /* Added */
+  bottom: 20px; /* Added */
+  width: 80px;
+  padding: 15px;
+  background-color: #1877f2;
+  color: #fff;
+  border: none;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  cursor: pointer;
+}
+
+#send-btn:hover {
+  background-color: #166fe5;
+}
+
+div#chat-messages div {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+div#chat-messages div:nth-child(odd) {
+  background-color: #e0e0e0;
+}
+
+div#chat-messages div:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Message Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+div#chat-messages div {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  #chat-window {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #user-input {
+    width: calc(100% - 60px);
+  }
+
+  #send-btn {
+    width: 60px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
