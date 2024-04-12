@@ -1,18 +1,13 @@
 from flask import Flask, render_template, request, jsonify
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
-import spacy
 
 app = Flask(__name__)
 
-# Load the spaCy model
-nlp = spacy.load("en_core_web_sm")
-
-# Initialize ChatBot with the language model
-bot = ChatBot("My Bot", tagger_language=nlp)
-
+bot = ChatBot("My Bot")
 convo = [
-    "Hello",
+
+   "Hello",
     "Hi there!",
     "What is your name?",
     "My name is Heera ChatBot, I am created by Harsh.",
@@ -103,8 +98,8 @@ convo = [
     "As an AI, I don't browse the internet like humans do. However, I can access information from various sources to assist you!",
     "What do you think about virtual reality?",
     "Virtual reality has the potential to revolutionize entertainment, education, and many other industries by providing immersive experiences. It's an exciting."
-]
 
+]
 trainer = ListTrainer(bot)
 trainer.train(convo)
 
